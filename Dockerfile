@@ -1,4 +1,4 @@
-FROM python:3.11.6-alpine
+FROM python:3.11.6-slim
 
 WORKDIR /app
 
@@ -8,5 +8,6 @@ ENV PYTHONDONTWRITEBYTECODE 1
 COPY . .
 
 RUN echo "Hello from installing"
+RUN apt-get upgrade
 
-CMD ["python", 'main.py']
+CMD ["python", "main.py"]
